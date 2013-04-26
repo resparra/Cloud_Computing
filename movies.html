@@ -1,0 +1,33 @@
+<!doctype html>
+<html ng-app="app">
+  <header>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.js"></script>
+    <script language="javascript" type="text/javascript">
+      angular.module('app', []);
+      
+      //Whatever you put on the controller scope,
+      //will be availalble in the HTML element bound to the controller.
+      function MyController($scope){
+        $scope.newMessage = "Hi";
+        $scope.messages = ["http://ia.media-imdb.com/images/M/MV5BMTY1MTg1NDAxOV5BMl5BanBnXkFtZTcwMjg1MDI5Nw@@._V1_SY317_CR0,0,214,317_.jpg", "http://upload.wikimedia.org/wikipedia/en/thumb/d/d2/Prestige_poster.jpg/220px-Prestige_poster.jpg"]; 
+        
+        $scope.add = function(){
+          $scope.messages.push($scope.newMessage);
+        };
+      }
+    </script>
+  </header>
+  
+  <body ng-controller="MyController">
+    Favorite Movie Poster:<br>     
+    <input type="text" ng-model="newMessage">
+    <input type="submit" ng-click="add()" value="new message">
+    <br>
+    Messages: <br>
+    <ul>
+      <img ng-repeat="message in messages"
+         src="{{message}}" height="100" width="70" />
+    </ul>
+  </body>
+  
+</html>
