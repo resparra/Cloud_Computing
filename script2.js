@@ -11,6 +11,9 @@ function Ctrl($scope) {
         if (this.text == "Today we can help the deaf community"){
              $("#video").html('<video width="320" height="240" controls autoplay><source src="https://dl.dropboxusercontent.com/u/10068994/can_help.m4v" type="video/mp4"></video>');
            }
+        if (this.text == "bacon"){
+             $("#video").html('<video width="320" height="240" controls autoplay><source src="https://dl.dropboxusercontent.com/u/10068994/bacon.mp4" type="video/mp4"></video>');
+           }
            this.text = '';
            }
         };
